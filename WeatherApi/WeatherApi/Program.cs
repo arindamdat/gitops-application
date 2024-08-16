@@ -26,6 +26,11 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 });
 
+app.MapGet("/allweather", () =>
+{
+    return summaries.ToArray();
+});
+
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
